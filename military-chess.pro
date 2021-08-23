@@ -13,7 +13,10 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h
+    chessboard.h \
+    mainwindow.h \
+    piece.h \
+    tile.h
 
 FORMS += \
     mainwindow.ui

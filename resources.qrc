@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/rsc">
+    <qresource prefix="/files">
         <file>rsc/chessboard.png</file>
         <file>rsc/军旗_蓝.png</file>
         <file>rsc/军长_蓝.png</file>
