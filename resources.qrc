@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/rsc">
+        <file>rsc/chessboard.png</file>
+        <file>rsc/军旗_蓝.png</file>
+        <file>rsc/军长_蓝.png</file>
+        <file>rsc/占位符（未翻的棋子）.png</file>
+        <file>rsc/占位符（空兵站）.png</file>
+        <file>rsc/司令_红.png</file>
+        <file>rsc/司令_蓝.png</file>
+        <file>rsc/团长_红.png</file>
+        <file>rsc/团长_蓝.png</file>
+        <file>rsc/地雷_红.png</file>
+        <file>rsc/地雷_蓝.png</file>
+        <file>rsc/工兵_红.png</file>
+        <file>rsc/工兵_蓝.png</file>
+        <file>rsc/师长_红.png</file>
+        <file>rsc/师长_蓝.png</file>
+        <file>rsc/排长_红.png</file>
+        <file>rsc/排长_蓝.png</file>
+        <file>rsc/旅长_红.png</file>
+        <file>rsc/旅长_蓝.png</file>
+        <file>rsc/棋盘.png</file>
+        <file>rsc/棋盘2.png</file>
+        <file>rsc/棋盘背景.jpg</file>
+        <file>rsc/炸弹_红.png</file>
+        <file>rsc/炸弹_蓝.png</file>
+        <file>rsc/空棋盘.png</file>
+        <file>rsc/空行营.png</file>
+        <file>rsc/营长_红.png</file>
+        <file>rsc/营长_蓝.png</file>
+        <file>rsc/连长_红.png</file>
+        <file>rsc/连长_蓝.png</file>
+    </qresource>
+</RCC>
