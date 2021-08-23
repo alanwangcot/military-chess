@@ -13,10 +13,9 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
-    chessboard.h \
+    gameboard.h \
     mainwindow.h \
-    piece.h \
-    tile.h
+    piece.h
 
 FORMS += \
     mainwindow.ui

@@ -2,9 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "chessboard.h"
-#include "piece.h"
-#include "tile.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

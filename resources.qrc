@@ -1,34 +1,34 @@
 <RCC>
     <qresource prefix="/files">
         <file>rsc/chessboard.png</file>
-        <file>rsc/军旗_蓝.png</file>
-        <file>rsc/军长_蓝.png</file>
-        <file>rsc/占位符（未翻的棋子）.png</file>
-        <file>rsc/占位符（空兵站）.png</file>
-        <file>rsc/司令_红.png</file>
-        <file>rsc/司令_蓝.png</file>
-        <file>rsc/团长_红.png</file>
-        <file>rsc/团长_蓝.png</file>
-        <file>rsc/地雷_红.png</file>
-        <file>rsc/地雷_蓝.png</file>
-        <file>rsc/工兵_红.png</file>
-        <file>rsc/工兵_蓝.png</file>
-        <file>rsc/师长_红.png</file>
-        <file>rsc/师长_蓝.png</file>
-        <file>rsc/排长_红.png</file>
-        <file>rsc/排长_蓝.png</file>
-        <file>rsc/旅长_红.png</file>
-        <file>rsc/旅长_蓝.png</file>
-        <file>rsc/棋盘.png</file>
-        <file>rsc/棋盘2.png</file>
-        <file>rsc/棋盘背景.jpg</file>
-        <file>rsc/炸弹_红.png</file>
-        <file>rsc/炸弹_蓝.png</file>
-        <file>rsc/空棋盘.png</file>
-        <file>rsc/空行营.png</file>
-        <file>rsc/营长_红.png</file>
-        <file>rsc/营长_蓝.png</file>
-        <file>rsc/连长_红.png</file>
-        <file>rsc/连长_蓝.png</file>
+        <file>rsc/flag blue.png</file>
+        <file>rsc/junzhang blue.png</file>
+        <file>rsc/unturned piece.png</file>
+        <file>rsc/empty tile.png</file>
+        <file>rsc/siling red.png</file>
+        <file>rsc/siling blue.png</file>
+        <file>rsc/tuanzhang red.png</file>
+        <file>rsc/tuanzhang blue.png</file>
+        <file>rsc/mine red.png</file>
+        <file>rsc/mine blue.png</file>
+        <file>rsc/gongbing red.png</file>
+        <file>rsc/gongbing blue.png</file>
+        <file>rsc/shizhang red.png</file>
+        <file>rsc/shizhang blue.png</file>
+        <file>rsc/paizhang red.png</file>
+        <file>rsc/paizhang blue.png</file>
+        <file>rsc/lvzhang red.png</file>
+        <file>rsc/lvzhang blue.png</file>
+        <file>rsc/gameboard.png</file>
+        <file>rsc/chessboard 2.png</file>
+        <file>rsc/chessboard background.jpg</file>
+        <file>rsc/bomb red.png</file>
+        <file>rsc/bomb blue.png</file>
+        <file>rsc/empty board.png</file>
+        <file>rsc/empty camp.png</file>
+        <file>rsc/yingzhang red.png</file>
+        <file>rsc/yingzhang blue.png</file>
+        <file>rsc/lianzhang red.png</file>
+        <file>rsc/lianzhang blue.png</file>
     </qresource>
 </RCC>
