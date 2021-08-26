@@ -10,12 +10,18 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    railtile.cpp \
+    safetile.cpp
 
 HEADERS += \
+    dfsHelper.h \
     gameboard.h \
     mainwindow.h \
-    piece.h
+    piece.h \
+    railtile.h \
+    tile.h \
+    safetile.h
 
 FORMS += \
     mainwindow.ui
