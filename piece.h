@@ -7,14 +7,18 @@ class piece {
 private:
     int rank;
     int side; // -1 = red, 0 = unoccupied, 1 = blue
+    bool revealed;
+
 public:
     piece(){
         rank = -1;
         side = 0;
+        revealed = false;
     }
     piece(int _rank, int _side) {
         rank = _rank;
         side = _side;
+        revealed = false;
     }
 
     int getRank() {
@@ -25,35 +29,44 @@ public:
         return side;
     }
 
+    bool isRevealed(){
+        return revealed;
+    }
+
+
+    void turnPiece(){
+        revealed = true;
+    }
+
     void printPiece() {
         using namespace std;
-        cout << rank << "|" << side << " ";
+        cout << rank << "|" << side << "** ";
     }
 
     //return 1 for true, -1 for false, and 0 for mutual annihilation
-    int canTake(piece* otherPiece) {
+    int canTake(piece  otherPiece) {
         //军旗和地雷无法移动
-        if (rank == 10 || rank == 11 || otherPiece->getRank() != 10 || otherPiece->getRank() != 11){
+        if (rank == 10 || rank == 11 || otherPiece.getRank() != 10 || otherPiece.getRank() != 11){
             return -1;
         }
         //如果目标棋子为同阵营则不能移动
-        if (otherPiece->getSide() == side) {
+        if (otherPiece.getSide() == side) {
             return -1;
         }
         //工兵排除地雷
-        if (rank == 0 && otherPiece->getRank() == 11) {
+        if (rank == 0 && otherPiece.getRank() == 11) {
             return 1;
         }
        //炸弹同归于尽
-        if (otherPiece->getRank() == 9 || rank == 9) {
+        if (otherPiece.getRank() == 9 || rank == 9) {
             return 0;
         }
         //同等大小同归于尽
-        if (rank == otherPiece->getRank()) {
+        if (rank == otherPiece.getRank()) {
             return 0;
         }
         //大子吃小子
-        if (rank > otherPiece->getRank()) {
+        if (rank > otherPiece.getRank()) {
             return 1;
         }
         //无法移动
