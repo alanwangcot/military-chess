@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLabel>
+#include "preparewindow.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -18,10 +20,15 @@ private slots:
     }
 
     void on_pushButton_2_clicked();
+    void closePreWin();
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     Ui::MainWindow *ui;
+
+private:
+
+    preparewindow *preWin;
 };
 #endif // MAINWINDOW_H

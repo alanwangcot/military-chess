@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "gameboard.h"
+#include "myserver.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -11,6 +12,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     MainWindow w;
-    w.show();
+//    myserver server;
+//    w.show();
     return a.exec();
 }

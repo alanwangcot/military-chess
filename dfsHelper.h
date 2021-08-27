@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+#include <map>
+#include <list>
 #include "gameboard.h"
 #include "piece.h"
 
