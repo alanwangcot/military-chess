@@ -17,15 +17,18 @@ class connectionhandling : public QObject
 public:
     explicit connectionhandling(QObject *parent = nullptr);
 //    ~connectionhandling();
-//    QTcpServer *listenSocket;
+    QTcpServer *listenSocket;
     void initServer();
     void sendInitialState();
     void closeServer();
     gameboard getBoard();
+    std::string getToSend();
+    QTcpSocket *readWriteSocket;
 
 public slots:
     void acceptConnection();
     void receivePacket();
+    void clientDisconnected();
 //    void pieceSelected();
 //    void makeMove();
 //    void gameOver();
@@ -34,10 +37,10 @@ public slots:
 signals:
     void initialStateSent();
     void clientConnected();
-
+    void clientDisconnect();
 private:
-    QTcpServer *listenSocket;
-    QTcpSocket *readWriteSocket;
+//    QTcpServer *listenSocket;
+
     gameboard gb;
     QString toSend;
 //    bool isOccupied;

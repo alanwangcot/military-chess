@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>55</height>
+    <width>395</width>
+    <height>73</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,37 @@
     <string>The other client has disconnected/forfeited. You win</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>40</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogDisconnected</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>197</x>
+     <y>36</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -7,6 +7,8 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include "connectionhandling.h"
+#include "dialogdisconnected.h"
+#include "ui_dialogdisconnected.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class preparewindow; }
@@ -39,7 +41,7 @@ public slots:
 //    void stateChanged(bool checked);
     void on_connectServerButton_clicked();
     void gotIPSignal(QString ip);
-//    void clientConnected();
+    void clientDisconnected();
 
 private slots:
     void on_createServerButton_clicked();

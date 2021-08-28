@@ -24,12 +24,17 @@ preparewindow::preparewindow(QWidget *parent)
 //        connect(diag,SIGNAL(connectButtonClicked(QString ip)),this,SLOT(gotIPSignal(QString ip)));
         QObject::connect(diag,SIGNAL(connectButtonClicked(QString)), this, SLOT(gotIPSignal(QString)));
 //        QObject::connect(server,SIGNAL(clientConnected()),this,SLOT(clientConnect()));
-
+//        QObject::connect(server,SIGNAL(clientDisconnect()),this,SLOT(preparewindow::clientDisconnected()));
 }
 
 //void clientConnect() {
 //    emit clientConnectSignalForMainWindow();
 //}
+
+void preparewindow::clientDisconnected() {
+    DialogDisconnected *dd = new DialogDisconnected();
+    dd->show();
+}
 
 preparewindow::~preparewindow() {
     delete ui;

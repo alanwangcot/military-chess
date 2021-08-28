@@ -14,7 +14,8 @@
 
 enum moveType {
     movement = 0,
-    reveal = 1
+    reveal = 1,
+    timeout = 2
 };
 
 
