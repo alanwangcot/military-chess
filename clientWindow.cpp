@@ -22,15 +22,32 @@ clientWindow::clientWindow(QWidget *parent) :
 //    p.setBrush(QPalette::Window, QBrush(pm));
 //    this->setPalette(p);
 //      QLabel* boardDraw[5][12];
-    firstClick = false;
+    firstClick = true;
     QObject::connect(this,SIGNAL(mouseClicked(moveType)),this,SLOT(sendMove(moveType)));
     QObject::connect(this,SIGNAL(mouseClicked(moveType)),this,SLOT(drawPieces()));
     QObject::connect(this,SIGNAL(moveSent()),this,SLOT(disableEventUntilMyTurn()));
+//    QObject::connect(this->socket,SIGNAL(readyRead()),this,SLOT(receiveMove()));
 }
 
 clientWindow::~clientWindow()
 {
     delete ui;
+}
+
+void clientWindow::receiveMove() {
+    QString receivedMove;
+    receivedMove = socket->readAll();
+    if (receivedMove.toStdString()[0] == 'r') {
+        std::vector<std::string> receivedData;
+        receivedData = clientWindow::split(receivedMove.toStdString().substr(2), ',');
+        gb.grid[stoi(receivedData[0])][stoi(receivedData[1])].turnPiece();
+    }
+    if (receivedMove.toStdString()[0] == 'm') {
+        std::vector<std::string> receivedData;
+        receivedData = clientWindow::split(receivedMove.toStdString().substr(2), ',');
+        gb.movePiece(stoi(receivedData[0]), stoi(receivedData[1]), stoi(receivedData[2]), stoi(receivedData[3]));
+    }
+    clientWindow::drawPieces();
 }
 
 void clientWindow::disableEventUntilMyTurn() {
@@ -171,20 +188,22 @@ void clientWindow::mousePressEvent(QMouseEvent *event) {
 
 void clientWindow::sendMove(moveType mt)
 {
-    if (mt = movement) {
-        QString qs = "moved " + QString::number(pos1x) + "," + QString::number(pos1y) + "," + QString::number(pos2x) + QString::number(pos2y);
+    if (mt ==movement) {
+        QString qs = "m " + QString::number(pos1x) + "," + QString::number(pos1y) + "," + QString::number(pos2x) + QString::number(pos2y);
         socket->write(qs.toUtf8());
          qDebug() << "move sent!";
         emit moveSent();
 
     }
-    if (mt = reveal) {
-        QString qs = "revealed " + QString::number(pos1x) + "," + QString::number(pos1y);
+    if (mt ==reveal) {
+        QString qs = "r " + QString::number(pos1x) + "," + QString::number(pos1y);
         socket->write(qs.toUtf8());
          qDebug() << "move sent!";
         emit moveSent();
     }
-
+    if (mt == timeout) {
+        socket->write("t");
+    }
 }
 
 
@@ -202,6 +221,10 @@ void clientWindow::connectHost(QString ip) {
 void clientWindow::drawPieces() {
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 12; j++) {
+            if(gb.grid[i][j].getSide() == 0) {
+                QPixmap qpm = QPixmap("/files/rsc/emptytile.png").scaled(boardDraw[i][j]->size());
+                boardDraw[i][j]->setPixmap(qpm);
+            }
             if(gb.grid[i][j].isRevealed()) {
                 int side = 1;
                 if (gb.grid[i][j].getSide() == -1) {
@@ -221,6 +244,12 @@ void clientWindow::receiveData() {
 //    qDebug() << received;
 //    ui->label_2->setText(received);
 //    std::string newPiece = "";
+    char whichSideFirst = received.toStdString()[received.toStdString().length() - 1];
+    if (whichSideFirst == '1') {
+        myTurn = true;
+    } else {
+        myTurn = false;
+    }
     std::vector<std::string> receivedPieceData;
     receivedPieceData = clientWindow::split(received.toStdString(), ',');
     for (int i = 0; i < 5; i++) {

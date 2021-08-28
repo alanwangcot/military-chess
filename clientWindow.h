@@ -9,7 +9,7 @@
 #include <sstream>
 #include <QTcpSocket>
 #include <QLabel>
-
+#include <QTimer>
 
 
 namespace Ui {
@@ -35,7 +35,7 @@ private:
     bool firstClick;
 //    piece p1, p2;
     QLabel* boardDraw[5][12];
-    bool myTurn = true;
+    bool myTurn;
 
 public slots:
 //    void connectedToHost();
@@ -49,7 +49,7 @@ public slots:
 private slots:
     void receiveData();
     void disableEventUntilMyTurn();
-
+    void receiveMove();
     void on_pushButton_clicked();
 
 private:
