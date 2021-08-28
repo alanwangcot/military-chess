@@ -17,9 +17,10 @@ class connectionhandling : public QObject
 public:
     explicit connectionhandling(QObject *parent = nullptr);
 //    ~connectionhandling();
-    QTcpServer *listenSocket;
+//    QTcpServer *listenSocket;
     void initServer();
     void sendInitialState();
+    void closeServer();
     gameboard getBoard();
 
 public slots:
@@ -35,7 +36,7 @@ signals:
     void clientConnected();
 
 private:
-//    QTcpServer *listenSocket;
+    QTcpServer *listenSocket;
     QTcpSocket *readWriteSocket;
     gameboard gb;
     QString toSend;

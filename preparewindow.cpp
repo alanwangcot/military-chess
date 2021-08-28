@@ -11,8 +11,8 @@
 #include "dialog2.h"
 #include "ui_dialog2.h"
 #include "connectionhandling.h"
-#include "clientWindow.h"
-#include "ui_clientwindow.h"
+#include "clientwindow.h"
+#include "ui_clientWindow.h"
 
 
 preparewindow::preparewindow(QWidget *parent)
@@ -23,8 +23,13 @@ preparewindow::preparewindow(QWidget *parent)
         diag = new Dialog();
 //        connect(diag,SIGNAL(connectButtonClicked(QString ip)),this,SLOT(gotIPSignal(QString ip)));
         QObject::connect(diag,SIGNAL(connectButtonClicked(QString)), this, SLOT(gotIPSignal(QString)));
+//        QObject::connect(server,SIGNAL(clientConnected()),this,SLOT(clientConnect()));
 
 }
+
+//void clientConnect() {
+//    emit clientConnectSignalForMainWindow();
+//}
 
 preparewindow::~preparewindow() {
     delete ui;
@@ -95,4 +100,5 @@ void preparewindow::on_createServerButton_clicked()
 
 void preparewindow::serverClientConnected() {
     this->server->sendInitialState();
+    emit clientConnectSignalForMainWindow();
 }

@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     preWin = new preparewindow();
     preWin->setVisible(true);
     connect(preWin,SIGNAL(gotIP()),this, SLOT(closePreWin()));
-    connect(preWin->server,SIGNAL(clientConnected()),this,SLOT(remoteClientConnected()));
+    connect(preWin,SIGNAL(clientConnectSignalForMainWindow()),this,SLOT(remoteClientConnected()));
 }
 
 MainWindow::~MainWindow()
@@ -52,7 +52,6 @@ void MainWindow::drawBoardInit() {
 
 void MainWindow::on_pushButton_clicked()
 {
-    preWin->server->listenSocket->close();
-    this->close();
+    preWin->server->closeServer();
 }
 

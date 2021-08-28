@@ -15,6 +15,6 @@ Dialog2::~Dialog2()
 }
 
 void Dialog2::serverHosted(QString ip) {
-    ui->label->setText("Local server hosted at: " + ip + ":2002");
+    ui->label->setText("Local server hosted at: " + ip);
 
 }

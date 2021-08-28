@@ -50,3 +50,7 @@ void connectionhandling::sendInitialState() {
 gameboard connectionhandling::getBoard() {
     return gb;
 }
+
+void connectionhandling::closeServer() {
+    this->listenSocket->close();
+}

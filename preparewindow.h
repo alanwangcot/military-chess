@@ -24,6 +24,8 @@ public:
 signals:
     void serverStarted(QString ip);
     void gotIP();
+//    void clientConnect();
+    void clientConnectSignalForMainWindow();
 
 
 private:
@@ -37,6 +39,7 @@ public slots:
 //    void stateChanged(bool checked);
     void on_connectServerButton_clicked();
     void gotIPSignal(QString ip);
+//    void clientConnected();
 
 private slots:
     void on_createServerButton_clicked();
