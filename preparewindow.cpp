@@ -11,7 +11,7 @@
 #include "dialog2.h"
 #include "ui_dialog2.h"
 #include "connectionhandling.h"
-#include "clientwindow.h"
+#include "clientWindow.h"
 #include "ui_clientwindow.h"
 
 
@@ -62,6 +62,7 @@ void preparewindow::gotIPSignal(QString ip) {
 //    ui->text->setText(ip);
 
     diag->close();
+    this->setVisible(false);
     clientWindow *cw = new clientWindow;
     cw->connectHost(ip);
 

@@ -18,7 +18,7 @@ class preparewindow : public QMainWindow
 public:
     explicit preparewindow(QWidget *parent = 0);
     ~preparewindow();
-
+     connectionhandling *server;
     void initial();
 
 signals:
@@ -31,7 +31,7 @@ private:
 //    bool b = false;
     QString connectIP = "";
     Dialog *diag;
-    connectionhandling *server;
+
 
 public slots:
 //    void stateChanged(bool checked);

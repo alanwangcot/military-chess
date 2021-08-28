@@ -10,10 +10,11 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    clientWindow.cpp \
     connectionhandling.cpp \
-    clientwindow.cpp \
     dialog.cpp \
     dialog2.cpp \
+    dialogdisconnected.cpp \
     gameboard.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,12 +23,13 @@ SOURCES += \
     preparewindow.cpp
 
 HEADERS += \
+    clientWindow.h \
     connectionhandling.h \
-    clientwindow.h \
 #    dfsHelper.h \
     dialog.h \
     dialog2.h \
 #    g.h \
+    dialogdisconnected.h \
     gameboard.h \
     mainwindow.h \
 #    myserver.h \
@@ -39,6 +41,7 @@ FORMS += \
     clientWindow.ui \
     dialog.ui \
     dialog2.ui \
+    dialogdisconnected.ui \
     mainwindow.ui \
     preparewindow.ui
 

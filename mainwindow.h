@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QLabel>
 #include "preparewindow.h"
+#include "gameboard.h"
+#include "piece.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -18,17 +20,20 @@ private slots:
     void checkTile() {
 
     }
-
-    void on_pushButton_2_clicked();
+    void remoteClientConnected();
     void closePreWin();
+
+    void on_pushButton_clicked();
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     Ui::MainWindow *ui;
-
+    gameboard gb;
+    void drawBoardInit();
+    void drawPieces();
 private:
-
+    QLabel* boardDraw[5][12];
     preparewindow *preWin;
 };
 #endif // MAINWINDOW_H

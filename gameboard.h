@@ -21,8 +21,7 @@ enum moveType {
 class gameboard {
 private:
 
-    bool safeTile[5][12];
-    bool railTile[5][12];
+
     std::vector<piece> addQueue;
 //    bool redWin. blueWin;
 
@@ -31,6 +30,9 @@ private:
 //    }
 public:
     piece grid[5][12];
+    bool safeTile[5][12];
+    bool railTile[5][12];
+    int lastRevealedSide = 0;
     gameboard();
     void randPlacement();
 

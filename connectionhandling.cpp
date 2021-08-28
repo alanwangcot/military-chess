@@ -26,6 +26,7 @@ void connectionhandling::initServer() {
 //        }
 //    }
     QObject::connect(this->listenSocket,SIGNAL(newConnection()),this,SLOT(acceptConnection()));
+
 }
 
 void connectionhandling::acceptConnection() {
@@ -44,4 +45,8 @@ void connectionhandling::sendInitialState() {
 //    qDebug() << toSend;
     readWriteSocket->write(toSend.toUtf8());
     emit initialStateSent();
+}
+
+gameboard connectionhandling::getBoard() {
+    return gb;
 }

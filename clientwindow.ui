@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>clientWindow</class>
- <widget class="QMainWindow" name="clientwindow">
+ <widget class="QMainWindow" name="clientWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>737</width>
+    <width>900</width>
     <height>1046</height>
    </rect>
   </property>
@@ -18,13 +18,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>737</width>
+    <width>900</width>
     <height>1046</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>737</width>
+    <width>900</width>
     <height>1046</height>
    </size>
   </property>
@@ -90,7 +90,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/files/rsc/chessboard.png</pixmap>
+     <pixmap resource="resources.qrc">:/files/rsc/emptyboardwithbgrd.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -99,36 +99,14 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>590</y>
-      <width>129</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>360</y>
-      <width>581</width>
-      <height>551</height>
+      <x>750</x>
+      <y>10</y>
+      <width>141</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Disconnect/Forfeit</string>
     </property>
    </widget>
   </widget>
@@ -137,8 +115,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>737</width>
-     <height>22</height>
+     <width>900</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>

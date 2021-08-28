@@ -17,9 +17,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>230</x>
       <y>0</y>
-      <width>251</width>
+      <width>341</width>
       <height>41</height>
      </rect>
     </property>
@@ -76,18 +76,63 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
+   <widget class="QMenu" name="ConnectMenu">
     <property name="title">
-     <string>File</string>
+     <string>Connect</string>
     </property>
+    <addaction name="actionHostServer"/>
+    <addaction name="actionConnectToServer"/>
    </widget>
-   <addaction name="menuFile"/>
+   <addaction name="ConnectMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionHostServer">
+   <property name="text">
+    <string>Host Server</string>
+   </property>
+  </action>
+  <action name="actionConnectToServer">
+   <property name="text">
+    <string>Connect to Server</string>
+   </property>
+  </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionHostServer</sender>
+   <signal>triggered()</signal>
+   <receiver>createServerButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>125</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionConnectToServer</sender>
+   <signal>triggered()</signal>
+   <receiver>connectServerButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>655</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

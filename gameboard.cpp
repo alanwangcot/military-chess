@@ -4,6 +4,7 @@ gameboard::gameboard() {
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 12; j++) {
                railTile[i][j] = false;
+               safeTile[i][j] = false;
             if (j == 1 || j == 5 || j == 6 || j == 10) {
                 railTile[i][j] = true;
             }
